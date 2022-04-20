@@ -11,8 +11,7 @@ To use plugin, just import package `import 'package:awesome_number_picker/awesom
 - Customizable design.
 
 ## Demo
-
-![Demo: ](demo.gif)
+![demo](https://user-images.githubusercontent.com/22174249/164168143-26681e0d-6fd5-4867-8cf1-a22de85d291f.gif)
 
 ## Usage
 
