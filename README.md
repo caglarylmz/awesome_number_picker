@@ -12,7 +12,7 @@ To use plugin, just import package `import 'package:awesome_number_picker/awesom
 
 ## Demo
 
-![Demo: ](demo.webm)
+![Demo: ](demo.gif)
 
 ## Usage
 
