@@ -1,6 +1,6 @@
 name: awesome_number_picker
 description: This app is a vertical or horizontal scroll selector for users who want to select a number
-version: 0.0.3
+version: 0.0.4
 homepage: https://github.com/caglarylmz/
 
 environment:

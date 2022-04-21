@@ -9,3 +9,7 @@
 ## 0.0.3
 
 * Add DecimalNumberPicker
+
+## 0.0.4
+
+* For some fixes
