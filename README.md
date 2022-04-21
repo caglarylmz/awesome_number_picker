@@ -14,6 +14,10 @@ and use IntegerNumberPicker() or DecimalNumberPicker()
 ## Demo
 https://user-images.githubusercontent.com/22174249/164389089-add60c22-0c49-4f95-a45d-2770c66dead4.mp4
 
+
+![Demo: ](https://user-images.githubusercontent.com/22174249/164449986-afffcc2f-e107-40c5-bf06-c45569a702ef.mp4)
+
+
 ```
 
 import 'package:awesome_number_picker/awesome_number_picker.dart';
