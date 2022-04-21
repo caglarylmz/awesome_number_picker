@@ -84,56 +84,52 @@ class _IntegerNumberPickerState extends State<IntegerNumberPicker> {
         .titleSmall!
         .copyWith(color: Theme.of(context).unselectedWidgetColor);
 
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Transform.rotate(
-        angle:
-            widget.axis == Axis.vertical || widget.axis == null ? 0 : -pi / 2,
-        child: ListWheelScrollView.useDelegate(
-          controller: _controller,
-          onSelectedItemChanged: ((value) {
-            widget.onChanged(value + widget.minValue);
-            setState(() {
-              returnValue = value;
-            });
-          }),
-          physics: const BouncingScrollPhysics(),
-          perspective: 0.01,
-          itemExtent: widget.size ?? 40,
-          childDelegate: ListWheelChildBuilderDelegate(
-            childCount: widget.maxValue - widget.minValue,
-            builder: (c, i) => i == returnValue
-                ? Container(
-                    width: widget.size ?? 40,
-                    decoration: widget.pickedItemDecoration ?? pickedItemStyle,
-                    child: Transform.rotate(
-                      angle: widget.axis == Axis.vertical || widget.axis == null
-                          ? 0
-                          : pi / 2,
-                      child: Center(
-                        child: Text((i + widget.minValue).toString(),
-                            style: widget.pickedItemTextStyle ??
-                                pickedItemTextStyle),
-                      ),
+    return Transform.rotate(
+      angle: widget.axis == Axis.vertical || widget.axis == null ? 0 : -pi / 2,
+      child: ListWheelScrollView.useDelegate(
+        controller: _controller,
+        onSelectedItemChanged: ((value) {
+          widget.onChanged(value + widget.minValue);
+          setState(() {
+            returnValue = value;
+          });
+        }),
+        physics: const BouncingScrollPhysics(),
+        perspective: 0.01,
+        itemExtent: widget.size ?? 40,
+        childDelegate: ListWheelChildBuilderDelegate(
+          childCount: widget.maxValue - widget.minValue,
+          builder: (c, i) => i == returnValue
+              ? Container(
+                  width: widget.size ?? 40,
+                  decoration: widget.pickedItemDecoration ?? pickedItemStyle,
+                  child: Transform.rotate(
+                    angle: widget.axis == Axis.vertical || widget.axis == null
+                        ? 0
+                        : pi / 2,
+                    child: Center(
+                      child: Text((i + widget.minValue).toString(),
+                          style: widget.pickedItemTextStyle ??
+                              pickedItemTextStyle),
                     ),
-                  )
-                : Container(
-                    width: widget.size ?? 40,
-                    decoration: widget.otherItemsDecoration ?? otherItemsStyle,
-                    child: Transform.rotate(
-                      angle: widget.axis == Axis.vertical || widget.axis == null
-                          ? 0
-                          : pi / 2,
-                      child: Center(
-                        child: Text(
-                          (i + widget.minValue).toString(),
-                          style:
-                              widget.otherItemsTextStyle ?? otherItemsTextStyle,
-                        ),
+                  ),
+                )
+              : Container(
+                  width: widget.size ?? 40,
+                  decoration: widget.otherItemsDecoration ?? otherItemsStyle,
+                  child: Transform.rotate(
+                    angle: widget.axis == Axis.vertical || widget.axis == null
+                        ? 0
+                        : pi / 2,
+                    child: Center(
+                      child: Text(
+                        (i + widget.minValue).toString(),
+                        style:
+                            widget.otherItemsTextStyle ?? otherItemsTextStyle,
                       ),
                     ),
                   ),
-          ),
+                ),
         ),
       ),
     );

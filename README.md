@@ -3,6 +3,7 @@
 ## Usage
 
 To use plugin, just import package `import 'package:awesome_number_picker/awesome_number_picker.dart';`
+and use IntegerNumberPicker() or DecimalNumberPicker()
 
 ## Features
 
@@ -11,9 +12,9 @@ To use plugin, just import package `import 'package:awesome_number_picker/awesom
 - Customizable design.
 
 ## Demo
+
 ![demo](https://user-images.githubusercontent.com/22174249/164168143-26681e0d-6fd5-4867-8cf1-a22de85d291f.gif)
 
-## Usage
 
 ```
 
@@ -28,7 +29,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  var val = 0;
+  int integerValue = 0;
+  double decimalValue = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,16 +39,13 @@ class _HomePageState extends State<HomePage> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                const Text("Selected Value"),
-                Text(val.toString()),
-              ],
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const Text("Integer Value"),
+              Text(integerValue.toString()),
+            ],
           ),
           SizedBox(
             height: 150,
@@ -55,7 +54,7 @@ class _HomePageState extends State<HomePage> {
               minValue: 0,
               maxValue: 10,
               onChanged: (i) => setState(() {
-                val = i;
+                integerValue = i;
               }),
             ),
           ),
@@ -67,16 +66,25 @@ class _HomePageState extends State<HomePage> {
               maxValue: 100,
               axis: Axis.horizontal,
               onChanged: (i) => setState(() {
-                val = i;
+                integerValue = i;
               }),
             ),
           ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const Text("Decimal Value"),
+              Text(decimalValue.toStringAsFixed(3)),
+            ],
+          ),
           SizedBox(
             height: 150,
-            child: IntegerNumberPicker(
-              initialValue: 50,
+            child: DecimalNumberPicker(
+              initialValue: 25.75,
               minValue: 0,
               maxValue: 100,
+              decimalPrecision: 3,
               otherItemsDecoration: BoxDecoration(
                 boxShadow: [
                   BoxShadow(
@@ -96,7 +104,7 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
               onChanged: (i) => setState(() {
-                val = i;
+                decimalValue = i;
               }),
             ),
           ),
@@ -106,8 +114,7 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
+
 ```
 
 ## Additional information
-
-TODO: We will make a picker for decimals. It will be DecimalNumberPicker
