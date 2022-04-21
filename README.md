@@ -12,11 +12,7 @@ and use IntegerNumberPicker() or DecimalNumberPicker()
 - Customizable design.
 
 ## Demo
-https://user-images.githubusercontent.com/22174249/164389089-add60c22-0c49-4f95-a45d-2770c66dead4.mp4
-
-
-![Demo: ](https://user-images.githubusercontent.com/22174249/164449986-afffcc2f-e107-40c5-bf06-c45569a702ef.mp4)
-
+![image](https://user-images.githubusercontent.com/22174249/164450869-8c3b641a-5811-4d52-9463-6c77f93a3016.png)
 
 ```
 
